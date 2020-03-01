@@ -28,7 +28,7 @@
 
     } 
 
-    public function new() {
+    public function newform() {
       $this->view->render('task_new');
 
       if (isset($_SESSION['flash_msg'])){ 
@@ -41,10 +41,10 @@
       $isSaved = $this->model->save();
       $_SESSION['flash_msg'] = $isSaved['msg'];
       if ($isSaved['id']) {
-        $last_page_num = ceil($isSaved['id']/$this->model::LIMIT);
+        $last_page_num = ceil($isSaved['id']/Task::LIMIT);
         header('Location: /tasks/page/'.$last_page_num);
       } else {
-        header('Location: /tasks/new');
+        header('Location: /tasks/newform');
       }
     }
    

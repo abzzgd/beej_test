@@ -9,7 +9,7 @@
 <BODY>
     <ul class="nav justify-content-end">
       <li class="nav-item">
-        <a class="nav-link" href="/tasks/new">Новая задача</a>
+        <a class="nav-link" href="/tasks/newform">Новая задача</a>
       </li>
       <li class="nav-item">
         <? if ($_SESSION['user_id']) { ?> 
