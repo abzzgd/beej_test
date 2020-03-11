@@ -55,7 +55,7 @@
 
     public function update() {
 
-      if (!isset($_SESSION['user_id'])) { header('Location: /login'); }
+      if (!isset($_SESSION['user_id'])) { header('Location: /login'); return; }
       if (isset($_POST['submit']) AND ($_POST['body'] != $_POST['old_task_body']) ) {
         $this->model->update();
       }
